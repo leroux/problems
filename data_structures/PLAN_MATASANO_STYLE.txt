@@ -1,0 +1,501 @@
+# Data Structures & Algorithms: Progressive Challenge Series
+
+## Overview
+Master data structures and algorithms through **progressive challenges** inspired by the Matasano crypto challenges. Each challenge builds practical intuition by implementing, breaking, and evolving solutions.
+
+**Core Philosophy**: Start simple, get it working, then evolve incrementally. Learn by building, not by watching.
+
+## Learning Methodology
+
+### **Challenge Structure**
+1. **Start Simple**: Build core functionality that barely works
+2. **Get It Working**: Focus on basic operations first
+3. **Test & Break**: Find what breaks through benchmarking
+4. **Evolve**: Add complexity incrementally
+5. **Apply**: Use in real problems
+
+### **Rules**
+- No looking up solutions until after you've struggled
+- Get it working first, optimize later
+- Learn by breaking things and fixing them
+- Each challenge builds on previous mastery
+- Benchmark everything - intuition can be wrong
+
+## Challenge Series
+
+---
+
+### **Series 1: Foundation Structures**
+
+#### **Challenge 1.1: Dynamic Array**
+- **Goal**: Build a growable array from scratch
+- **Operations**: append, get, set, insert, delete
+- **Key Discovery**: Why is append O(1) "amortized"?
+- **Evolution**: Start with fixed size, add doubling strategy
+- **Reality Check**: Benchmark vs Python lists
+
+#### **Challenge 1.2: Linked List**
+- **Goal**: Build pointer-based sequential storage
+- **Operations**: prepend, append, insert, delete, find
+- **Key Discovery**: Why traversal is expensive
+- **Evolution**: Head-only → head+tail → dummy head patterns
+- **Reality Check**: Memory overhead vs arrays
+
+#### **Challenge 1.3: Stack Wars**
+- **Goal**: Compare LIFO implementations
+- **Round 1**: Linked list stack implementation
+- **Round 2**: Array-based stack implementation
+- **Key Discovery**: Why arrays dominate despite theory
+- **Reality Check**: Intensive benchmarks at scale
+- **Evolution**: When would you choose linked?
+
+---
+
+### **Series 2: Queue Evolution**
+
+#### **Challenge 2.1: Basic FIFO Queue**
+- **Goal**: Build FIFO with head/tail pointers
+- **Operations**: enqueue, dequeue, front, is_empty, size
+- **Key Discovery**: Two-pointer coordination challenges
+- **Focus**: Get basic FIFO behavior working correctly
+
+#### **Challenge 2.2: Circular Buffer Queue**
+- **Goal**: Fixed-size array with wraparound
+- **New Concepts**: Modular arithmetic, full/empty detection
+- **Key Discovery**: Space efficiency vs dynamic allocation
+- **Focus**: Cache locality effects
+
+#### **Challenge 2.3: Dynamic Circular Queue**
+- **Goal**: Resizing circular buffer
+- **New Concepts**: Circular array copying strategies
+- **Key Discovery**: Best of both worlds?
+- **Reality Check**: Compare all three queue types
+
+#### **Challenge 2.4: Double-Ended Queue**
+- **Goal**: Insert/delete at both ends
+- **New Concepts**: Bidirectional operations
+- **Key Discovery**: When do you need this flexibility?
+- **Foundation**: Preparation for sliding window algorithms
+
+#### **Challenge 2.5: Queue Applications**
+
+**Real-World Applications:**
+- **BFS Foundation**: Use queue for graph traversal implementation
+- **Task Scheduler**: Simulate CPU job processing with priorities
+- **Sliding Window**: Maximum/minimum in moving windows
+- **Print Queue**: FIFO job processing simulation
+
+**Curated Problems:**
+- **LeetCode 200**: Number of Islands (BFS with your queue)
+- **LeetCode 239**: Sliding Window Maximum (deque application)
+- **LeetCode 102**: Binary Tree Level Order (BFS traversal)
+- **LeetCode 346**: Moving Average from Data Stream (circular queue)
+- **AoC 2019 Day 18**: Many-Worlds Interpretation (BFS pathfinding)
+- **AoC 2016 Day 13**: A Maze of Twisty Little Cubicles (BFS maze)
+
+**Key Discovery**: Which queue implementation for which problem type?
+
+---
+
+### **Series 3: Hash Table Mastery**
+
+#### **Challenge 3.1: Basic Hash Map**
+- **Goal**: Key-value storage with hashing
+- **Operations**: put, get, delete, keys, values
+- **Start Simple**: Fixed buckets, simple hash function
+- **Key Discovery**: What makes a good hash function?
+
+#### **Challenge 3.2: Collision Resolution Wars**
+- **Round 1**: Implement chaining (linked lists at buckets)
+- **Round 2**: Implement open addressing (linear probing)
+- **Round 3**: Quadratic probing, double hashing
+- **Key Discovery**: When does each approach excel?
+
+#### **Challenge 3.3: Dynamic Resizing**
+- **Goal**: Handle load factor growth
+- **New Concepts**: Rehashing strategies, load factor management
+- **Key Discovery**: When to resize? How much?
+- **Reality Check**: Benchmark resize strategies
+
+#### **Challenge 3.4: Hash Set**
+- **Goal**: Build set operations on hash table foundation
+- **Operations**: add, remove, contains, union, intersection
+- **Key Discovery**: Set theory in practice
+- **Applications**: Duplicate detection, membership testing
+
+#### **Challenge 3.5: Hash Table Applications**
+
+**Real-World Applications:**
+- **Caching System**: LRU cache with hash table + doubly linked list
+- **Database Indexing**: Fast key lookup simulation
+- **Spell Checker**: Dictionary lookup and suggestions
+- **Duplicate Detection**: File deduplication, plagiarism detection
+
+**Curated Problems:**
+- **LeetCode 1**: Two Sum (basic hash map usage)
+- **LeetCode 49**: Group Anagrams (hash key design)
+- **LeetCode 146**: LRU Cache (hash table + linked list)
+- **LeetCode 387**: First Unique Character (frequency counting)
+- **LeetCode 242**: Valid Anagram (hash-based comparison)
+- **AoC 2020 Day 6**: Custom Customs (set operations)
+- **AoC 2018 Day 2**: Inventory Management (character frequency)
+
+**String Hashing Bonus:**
+- **Rolling Hash**: Rabin-Karp pattern matching
+- **LeetCode 28**: Implement strStr() (string matching)
+- **AoC 2015 Day 5**: Doesn't He Have Intern-Elves (string validation)
+
+---
+
+### **Series 4: Tree Structures**
+
+#### **Challenge 4.1: Binary Search Tree**
+- **Goal**: Ordered tree data structure
+- **Operations**: insert, search, delete, min, max
+- **Key Discovery**: When does BST degenerate to linked list?
+- **Evolution**: Start with insert/search, add complex deletion
+
+#### **Challenge 4.2: Tree Traversals**
+- **Goal**: Visit all nodes systematically
+- **Methods**: Inorder, preorder, postorder, level-order
+- **Key Discovery**: Recursive vs iterative implementations
+- **Applications**: Expression trees, directory traversal
+
+#### **Challenge 4.3: BST Limitations**
+- **Goal**: Understand worst-case scenarios
+- **Experiment**: Insert sorted data, measure performance
+- **Key Discovery**: Why balance matters
+- **Foundation**: Motivation for balanced trees
+
+#### **Challenge 4.4: Balanced Tree Concepts**
+- **Goal**: Understand self-balancing principles
+- **Focus**: AVL rotation concepts, Red-Black principles
+- **Reality Check**: When to implement vs use library
+- **Key Discovery**: Complexity vs guarantees tradeoff
+
+#### **Challenge 4.5: Tree Applications**
+
+**Real-World Applications:**
+- **Expression Evaluator**: Parse and evaluate mathematical expressions
+- **File System Navigator**: Directory tree traversal and operations
+- **Decision Trees**: Simple AI/ML classification
+- **Syntax Trees**: Programming language parser foundation
+
+**Curated Problems:**
+- **LeetCode 94/144/145**: Binary Tree Traversals (use your implementations)
+- **LeetCode 98**: Validate Binary Search Tree
+- **LeetCode 100**: Same Tree (structural comparison)
+- **LeetCode 226**: Invert Binary Tree (tree manipulation)
+- **LeetCode 235**: Lowest Common Ancestor in BST
+- **AoC 2021 Day 16**: Packet Decoder (expression tree parsing)
+- **AoC 2020 Day 18**: Operation Order (math expression trees)
+
+**Key Discovery**: Tree thinking in recursive problem solving
+
+---
+
+### **Series 5: Priority Structures**
+
+#### **Challenge 5.1: Binary Heap**
+- **Goal**: Array-based complete binary tree
+- **Operations**: insert, extract_min, peek, build_heap
+- **Key Discovery**: Parent/child index arithmetic
+- **Focus**: Heap property maintenance
+
+#### **Challenge 5.2: Heapify Algorithms**
+- **Goal**: Efficient heap construction
+- **Methods**: Bottom-up vs top-down heapification
+- **Key Discovery**: Why bottom-up is O(n)
+- **Reality Check**: Benchmark construction methods
+
+#### **Challenge 5.3: Heap Sort**
+- **Goal**: In-place O(n log n) sorting using heaps
+- **Key Discovery**: How heap structure enables efficient sorting
+- **Comparison**: vs quicksort, mergesort performance
+- **Applications**: When to choose heap sort
+
+#### **Challenge 5.4: Priority Queue Applications**
+- **Dijkstra's Algorithm**: Shortest path preparation
+- **Task Scheduling**: Priority-based job processing
+- **K-Largest Elements**: Efficient top-K selection
+- **Key Discovery**: When priority matters in algorithms
+
+#### **Challenge 5.5: Priority Queue Applications**
+
+**Real-World Applications:**
+- **Operating System Scheduler**: Priority-based task scheduling
+- **Network Router**: Packet priority queuing
+- **Emergency Room Triage**: Patient priority management
+- **A* Pathfinding**: Priority-based graph search (games, GPS)
+
+**Curated Problems:**
+- **LeetCode 23**: Merge k Sorted Lists (min-heap merging)
+- **LeetCode 347**: Top K Frequent Elements (heap-based selection)
+- **LeetCode 215**: Kth Largest Element (heap vs quickselect)
+- **LeetCode 295**: Find Median from Data Stream (two heaps)
+- **LeetCode 703**: Kth Largest Element in Stream (heap maintenance)
+- **AoC 2021 Day 15**: Chiton (Dijkstra with priority queue)
+- **AoC 2019 Day 20**: Donut Maze (priority-based BFS)
+
+**Heap Variants Exploration:**
+- **Min vs Max Heaps**: Dual implementations comparison
+- **D-ary Heaps**: Multiple children per node performance
+- **Key Discovery**: When different heap structures excel
+
+---
+
+### **Series 6: Graph Foundations**
+
+#### **Challenge 6.1: Graph Representations**
+- **Goal**: Store graph relationships efficiently
+- **Round 1**: Adjacency list implementation
+- **Round 2**: Adjacency matrix implementation
+- **Key Discovery**: Dense vs sparse graph tradeoffs
+- **Reality Check**: Memory usage comparison
+
+#### **Challenge 6.2: Graph Traversal**
+- **Goal**: Visit all reachable nodes systematically
+- **Method 1**: Depth-First Search (DFS) - recursive
+- **Method 2**: DFS iterative (using stack)
+- **Method 3**: Breadth-First Search (BFS) - using queue
+- **Key Discovery**: Order of visitation implications
+
+#### **Challenge 6.3: Connected Components**
+- **Goal**: Find isolated subgraphs
+- **Methods**: DFS-based component labeling
+- **Applications**: Social network analysis, maze solving
+- **Key Discovery**: Graph connectivity in practice
+
+#### **Challenge 6.4: Shortest Paths**
+- **Goal**: Find minimum cost paths
+- **Method 1**: BFS for unweighted graphs
+- **Method 2**: Dijkstra for weighted graphs (using your heap!)
+- **Key Discovery**: Why different algorithms for different constraints
+- **Foundation**: Pathfinding in games/maps
+
+#### **Challenge 6.5: Graph Applications**
+
+**Real-World Applications:**
+- **Social Network Analysis**: Friend recommendations, influence mapping
+- **GPS Navigation**: Route planning and traffic optimization
+- **Web Crawler**: Link following and page ranking
+- **Dependency Resolution**: Package managers, build systems
+- **Network Analysis**: Internet topology, network reliability
+
+**Curated Problems:**
+- **LeetCode 200**: Number of Islands (connected components)
+- **LeetCode 207/210**: Course Schedule (topological sort, cycle detection)
+- **LeetCode 785**: Is Graph Bipartite? (graph coloring)
+- **LeetCode 133**: Clone Graph (graph traversal and construction)
+- **LeetCode 743**: Network Delay Time (Dijkstra shortest path)
+- **LeetCode 399**: Evaluate Division (weighted graph relationships)
+- **AoC 2018 Day 7**: The Sum of Its Parts (topological sort)
+- **AoC 2019 Day 6**: Universal Orbit Map (tree/graph relationships)
+- **AoC 2021 Day 12**: Passage Pathing (path counting with constraints)
+
+**Advanced Graph Concepts:**
+- **Minimum Spanning Trees**: Network design optimization
+- **Flow Networks**: Maximum flow, minimum cut applications
+- **Key Discovery**: Graph thinking in unexpected problem domains
+
+---
+
+### **Series 7: Sorting Mastery**
+
+#### **Challenge 7.1: Elementary Sorts**
+- **Goal**: Understand basic sorting principles
+- **Algorithms**: Selection sort, insertion sort, bubble sort
+- **Key Discovery**: Why O(n²) algorithms still matter
+- **Analysis**: Best/worst case scenarios
+
+#### **Challenge 7.2: Divide & Conquer Sorts**
+- **Goal**: O(n log n) sorting algorithms
+- **Round 1**: Merge sort implementation
+- **Round 2**: Quick sort with different pivot strategies
+- **Key Discovery**: Stable vs unstable sorting
+- **Reality Check**: Benchmark against Python's Timsort
+
+#### **Challenge 7.3: Heap Sort Deep Dive**
+- **Goal**: In-place sorting using your heap implementation
+- **Key Discovery**: Space complexity optimization
+- **Comparison**: When to choose vs other O(n log n) sorts
+- **Applications**: Memory-constrained environments
+
+#### **Challenge 7.4: Distribution Sorts**
+- **Goal**: Non-comparison based sorting
+- **Algorithms**: Counting sort, radix sort, bucket sort
+- **Key Discovery**: When O(n) sorting is possible
+- **Applications**: Integer keys, limited value ranges
+
+#### **Challenge 7.5: Sorting Applications**
+
+**Real-World Applications:**
+- **Database Query Optimization**: Efficient data retrieval and indexing
+- **Graphics Rendering**: Z-buffer sorting, polygon ordering
+- **Data Processing Pipelines**: ETL operations, log analysis
+- **Scientific Computing**: Numerical simulation data organization
+- **Game Development**: Leaderboards, inventory management
+
+**Curated Problems:**
+- **LeetCode 88**: Merge Sorted Arrays (merge sort application)
+- **LeetCode 75**: Sort Colors (3-way partitioning, Dutch flag)
+- **LeetCode 148**: Sort List (linked list merge sort)
+- **LeetCode 179**: Largest Number (custom comparison sorting)
+- **LeetCode 324**: Wiggle Sort II (partial sorting with constraints)
+- **LeetCode 315**: Count of Smaller Numbers After Self (merge sort counting)
+- **AoC 2020 Day 5**: Binary Boarding (binary search on sorted data)
+- **AoC 2018 Day 4**: Repose Record (timestamp sorting and analysis)
+
+**Hybrid Sorting Exploration:**
+- **Study Timsort**: How Python's sort adapts to data patterns
+- **Implement Introsort**: Quicksort with heapsort fallback
+- **Key Discovery**: Adaptive algorithms for real-world data patterns
+
+---
+
+### **Series 8: String Processing**
+
+#### **Challenge 8.1: Pattern Matching**
+- **Goal**: Find substrings efficiently
+- **Round 1**: Naive string matching
+- **Round 2**: KMP algorithm implementation
+- **Round 3**: Rabin-Karp with rolling hash
+- **Key Discovery**: Preprocessing vs online complexity
+
+#### **Challenge 8.2: Trie (Prefix Tree)**
+- **Goal**: Efficient prefix operations
+- **Operations**: insert, search, starts_with, delete
+- **Applications**: Autocomplete, spell checking
+- **Key Discovery**: Space vs time tradeoffs
+
+#### **Challenge 8.3: Suffix Arrays/Trees**
+- **Goal**: All suffixes processing
+- **Applications**: Pattern matching, longest common substring
+- **Key Discovery**: Powerful but complex string structures
+- **Reality Check**: When to implement vs use library
+
+#### **Challenge 8.4: String Processing Applications**
+
+**Real-World Applications:**
+- **Search Engines**: Full-text indexing and query matching
+- **Bioinformatics**: DNA/RNA sequence alignment and analysis
+- **Code Editors**: Syntax highlighting, find/replace, autocomplete
+- **Data Compression**: Text compression algorithms
+- **Natural Language Processing**: Text analysis and pattern recognition
+- **Security**: Pattern matching in intrusion detection
+
+**Curated Problems:**
+- **LeetCode 28**: Implement strStr() (KMP vs naive pattern matching)
+- **LeetCode 14**: Longest Common Prefix (trie application)
+- **LeetCode 208**: Implement Trie (prefix tree operations)
+- **LeetCode 212**: Word Search II (trie-based multi-pattern matching)
+- **LeetCode 5**: Longest Palindromic Substring (string analysis)
+- **LeetCode 72**: Edit Distance (dynamic programming on strings)
+- **AoC 2015 Day 5**: Doesn't He Have Intern-Elves (string validation)
+- **AoC 2018 Day 2**: Inventory Management (string similarity)
+- **AoC 2020 Day 4**: Passport Processing (pattern validation)
+
+**Advanced String Concepts:**
+- **Suffix Arrays**: Efficient substring operations
+- **Rolling Hash**: Rabin-Karp pattern matching optimization
+- **Key Discovery**: String algorithms in unexpected domains
+
+---
+
+### **Series 9: Advanced Algorithms**
+
+#### **Challenge 9.1: Dynamic Programming Foundations**
+- **Goal**: Optimize recursive solutions
+- **Problems**: Fibonacci, coin change, longest common subsequence
+- **Techniques**: Memoization, tabulation, space optimization
+- **Key Discovery**: Overlapping subproblems identification
+
+#### **Challenge 9.2: Backtracking**
+- **Goal**: Constraint satisfaction problems
+- **Problems**: N-Queens, Sudoku solver, graph coloring
+- **Techniques**: Pruning, constraint propagation
+- **Key Discovery**: Search space explosion management
+
+#### **Challenge 9.3: Greedy Algorithms**
+- **Goal**: Local optimization strategies
+- **Problems**: Activity selection, Huffman coding, fractional knapsack
+- **Key Discovery**: When greedy gives optimal solutions
+- **Proof Techniques**: Exchange argument, staying ahead
+
+#### **Challenge 9.4: Network Flow**
+- **Goal**: Maximum flow problems
+- **Algorithms**: Ford-Fulkerson, Edmonds-Karp
+- **Applications**: Network capacity, bipartite matching
+- **Key Discovery**: Flow networks in unexpected places
+
+#### **Challenge 9.5: Advanced Algorithm Applications**
+
+**Real-World Applications:**
+- **Machine Learning**: Feature selection, optimization problems
+- **Operations Research**: Resource allocation, scheduling optimization
+- **Game AI**: Minimax, alpha-beta pruning, Monte Carlo methods
+- **Computational Biology**: Sequence alignment, protein folding
+- **Financial Modeling**: Portfolio optimization, risk analysis
+- **Computer Graphics**: Collision detection, path planning
+
+**Dynamic Programming Problems:**
+- **LeetCode 70**: Climbing Stairs (basic DP introduction)
+- **LeetCode 322**: Coin Change (classic DP optimization)
+- **LeetCode 300**: Longest Increasing Subsequence (DP variants)
+- **LeetCode 72**: Edit Distance (2D DP, string algorithms)
+- **AoC 2020 Day 17**: Conway Cubes (multi-dimensional DP)
+- **AoC 2019 Day 12**: The N-Body Problem (optimization with cycles)
+
+**Backtracking Problems:**
+- **LeetCode 51**: N-Queens (classic constraint satisfaction)
+- **LeetCode 37**: Sudoku Solver (constraint propagation)
+- **LeetCode 79**: Word Search (backtracking with pruning)
+- **AoC 2015 Day 9**: All in a Single Night (TSP-style optimization)
+
+**Greedy & Approximation:**
+- **LeetCode 435**: Non-overlapping Intervals (activity selection)
+- **LeetCode 253**: Meeting Rooms II (interval scheduling)
+- **AoC 2018 Day 13**: Mine Cart Madness (simulation with optimization)
+
+**Key Discovery**: When to use exact vs approximate solutions for real problems
+
+---
+
+## Learning Outcomes
+
+### **Phase 1 (Series 1-3): Core Data Structures**
+- Master the fundamental building blocks
+- Understand implementation vs theoretical complexity
+- Build intuition for structure selection
+
+### **Phase 2 (Series 4-6): Hierarchical & Graph Structures**
+- Understand relationships between data elements
+- Master tree and graph algorithms
+- Foundation for advanced computer science
+
+### **Phase 3 (Series 7-9): Algorithmic Techniques**
+- Sort data efficiently under different constraints
+- Process strings and text systematically
+- Solve optimization and search problems
+
+### **Skills Developed Throughout:**
+- **Implementation Skills**: Build complex structures from scratch
+- **Performance Analysis**: Benchmark theory against reality
+- **Problem Recognition**: Choose appropriate structures/algorithms
+- **Debugging Skills**: Find and fix complex algorithmic bugs
+- **Optimization Intuition**: When and how to optimize
+
+## Assessment Philosophy
+
+Success is measured by:
+- **Building working implementations** without looking up solutions
+- **Discovering why** certain approaches work better through experimentation
+- **Recognizing patterns** across different problem domains
+- **Choosing appropriate tools** for new problems
+- **Debugging algorithmic issues** independently
+
+Remember: The goal is not to memorize algorithms, but to develop **algorithmic thinking** through hands-on discovery.
+
+---
+
+*"You get to put on the flight suit, climb into the simulator, and crash that plane in every conceivable way."* - Maciej Cegłowski on the Matasano challenges

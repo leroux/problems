@@ -1,0 +1,378 @@
+# Data Structures & Algorithms Learning Plan
+
+## Overview
+Building foundational fluency with data structures and algorithms in Python through hands-on implementation, testing, and performance analysis. Following Steven Skiena's "The Algorithm Design Manual" as our theoretical foundation.
+
+## Teaching Style
+- Socratic coaching: Ask guiding questions instead of giving answers directly
+- Template-driven: Provide structure and tests, student implements
+- Performance-focused: Benchmark all implementations to verify Big O complexity
+- Comparative analysis: Compare different implementation approaches
+- Real-world context: Connect theory to practical applications
+
+## Progress Tracking
+
+### ✅ COMPLETED
+
+#### 1. Dynamic Array
+- **Skiena Reading**: Chapter 3.1 (Contiguous vs Linked Data Structures)
+- **Files**: `dynamic_array/dynamic_array.py`, tests, benchmarks
+- **Operations**: append, get, set, insert, delete, resize
+- **Key Insights**:
+  - Append O(1) amortized due to doubling strategy
+  - Insert/delete O(n) due to element shifting
+  - Space complexity O(n) with ≤2x overhead
+- **Benchmarks Confirmed**: All theoretical complexities verified
+
+#### 2. Singly Linked List
+- **Skiena Reading**: Chapter 3.2 (Lists), Chapter 3.3 (Stacks and Queues)
+- **Files**: `singly_linked_list/singly_linked_list.py` (with dummy head)
+- **Operations**: append, prepend, insert, delete, get, find, size
+- **Key Insights**:
+  - Prepend O(1), append O(n) without tail pointer
+  - All operations requiring traversal are O(n)
+  - Dummy head eliminates edge case handling
+  - Memory overhead significant vs arrays
+- **Benchmarks Confirmed**: Linear scaling for traversal operations
+- **Variations Explored**: Head-only vs head+tail, dummy head pattern
+
+#### 3. Stack
+- **Skiena Reading**: Chapter 3.3 (Stacks and Queues)
+- **Implementations**:
+  - Linked list version: `stack/stack.py`
+  - Array version: `stack/stack_array.py`
+- **Operations**: push, pop, peek, is_empty, size
+- **Key Insights**:
+  - All operations O(1) as expected
+  - Arrays dramatically faster (6-9x) due to memory locality
+  - Linked lists use 5x more memory due to pointer overhead
+  - Size operation: O(1) for arrays, O(n) for linked (major disadvantage)
+- **Performance Reality Check**: Theory vs practice - arrays won decisively
+- **Files**: Comprehensive benchmarks including intensive stress testing
+
+### 🔄 CURRENT: Queue (Matasano-Style Progressive Challenges)
+
+#### Theoretical Foundation:
+- **Skiena Reading**: Chapter 3.3 (Stacks and Queues)
+- **CS Primer**: Linear Structures module (practical implementation focus)
+
+#### Progressive Challenge Series:
+
+##### **Challenge #1: Basic FIFO Queue (Linked List)**
+- **Goal**: Build complete basic queue with head/tail pointers
+- **Operations**: enqueue, dequeue, is_empty, size, front/peek
+- **Edge Cases**: Empty queue, single element (not avoiding these!)
+- **Focus**: Get FIFO behavior working correctly
+- **Success Metric**: All basic operations work, O(1) enqueue and dequeue
+
+##### **Challenge #2: Circular Buffer Queue (Array-Based)**
+- **Goal**: Implement queue using fixed-size circular array
+- **New Concepts**: Wraparound indexing, front/rear pointers, full vs empty detection
+- **Comparison**: Benchmark against linked version
+- **Focus**: Space efficiency, cache locality effects
+- **Success Metric**: Handle capacity limits, understand when to use vs linked
+
+##### **Challenge #3: Dynamic Circular Queue**
+- **Goal**: Array-based queue that resizes when full
+- **New Concepts**: Dynamic resizing strategy, circular array copying
+- **Comparison**: Compare all three implementations (linked, fixed, dynamic)
+- **Focus**: Best of both worlds - array speed + unlimited capacity
+- **Success Metric**: Matches Python deque performance characteristics
+
+##### **Challenge #4: Double-Ended Queue (Deque)**
+- **Goal**: Support insert/delete at both ends efficiently
+- **New Concepts**: Bidirectional operations, choosing optimal end for operations
+- **Comparison**: Benchmark against collections.deque
+- **Focus**: Foundation for advanced algorithms (sliding window, etc.)
+- **Success Metric**: All four operations (push/pop front/back) are O(1)
+
+##### **Challenge #5: Real-World Applications**
+- **Goal**: Use your queue implementations to solve practical problems
+- **Applications**:
+  - BFS graph traversal (foundation for later)
+  - Task scheduler simulation
+  - Sliding window maximum problems
+  - Print queue simulation
+- **Focus**: When to choose which queue implementation
+- **Success Metric**: Solve problems efficiently, understand queue selection criteria
+
+#### Key Questions to Discover Through Implementation:
+1. **Memory Layout**: Why might arrays win despite O(1) complexity parity?
+2. **Capacity Management**: Fixed vs dynamic sizing tradeoffs
+3. **Cache Effects**: How does data locality impact real performance?
+4. **Use Case Optimization**: When does each implementation excel?
+
+#### Expected Learning Outcomes:
+- Understand FIFO data structure from multiple implementation angles
+- Experience array vs linked structure tradeoffs in practice
+- Build intuition for choosing data structures based on access patterns
+- Create foundation for graph algorithms (BFS) and sliding window problems
+
+### 📋 REMAINING DATA STRUCTURES (Skiena-Aligned)
+
+#### 4. Queue & Deque
+- **Skiena Reading**: Chapter 3.3 (Stacks and Queues)
+- **CS Primer**: Linear Structures module
+- **Linked List Queue**: head=front, tail=back for O(1) operations
+- **Circular Array Queue**: wraparound indexing, fixed vs dynamic sizing
+- **Double-ended Queue (Deque)**: insert/delete at both ends
+- **Applications**: BFS, job scheduling, sliding window problems
+- **Comparisons**: vs Python collections.deque
+
+#### 5. Priority Queue / Binary Heap ⭐
+- **Skiena Reading**: Chapter 4.3 (Heapsort: Fast Sorting via Data Structures)
+- **CS Primer**: Foundation for graph algorithms (Dijkstra's)
+- **Operations**: insert, extract_min/max, decrease_key, build_heap
+- **Array implementation**: parent/child index arithmetic (i, 2i+1, 2i+2)
+- **Heapify algorithms**: bottom-up heap construction
+- **Applications**: Dijkstra's algorithm, heap sort, task scheduling
+- **Variants**: Min-heap, max-heap, d-ary heaps
+
+#### 6. Hash Tables ⭐
+- **Skiena Reading**: Chapter 3.7 (Hashing and Strings)
+- **CS Primer**: Problem-solving with efficient lookup
+- **Hash Functions**: division, multiplication, universal hashing
+- **Collision Resolution**:
+  - Chaining: linked lists at each bucket
+  - Open Addressing: linear probing, quadratic probing, double hashing
+- **Dynamic Resizing**: load factor management, rehashing strategy
+- **Applications**: dictionaries, caches, databases, symbol tables
+
+#### 7. Hash Set (Built on Hash Table)
+- **Skiena Reading**: Chapter 3.7 (continued)
+- **Set Operations**: union, intersection, difference, symmetric difference
+- **Membership testing**: O(1) average case
+- **Applications**: duplicate detection, mathematical set operations
+
+#### 8. Binary Search Trees ⭐
+- **Skiena Reading**: Chapter 3.4 (Trees), Chapter 3.5 (Binary Search Trees)
+- **CS Primer**: Tree traversal foundation
+- **Basic Operations**: insert, delete, search, min, max, successor/predecessor
+- **Tree Traversals**: inorder, preorder, postorder, level-order
+- **Deletion Cases**: leaf, single child, two children (successor replacement)
+- **Applications**: ordered data, range queries, expression trees
+- **Limitations**: can degenerate to O(n) without balancing
+
+#### 9. Balanced Trees
+- **Skiena Reading**: Chapter 3.6 (Balanced Search Trees)
+- **AVL Trees**: height-balanced, rotation operations
+- **Red-Black Trees**: color-based balancing rules
+- **Applications**: when O(log n) guarantees are needed
+- **Note**: Implementation complexity high - understand concepts, use libraries
+
+#### 10. Strings & String Matching
+- **Skiena Reading**: Chapter 3.7 (Hashing and Strings), Chapter 18 (String Matching)
+- **String Representations**: arrays, linked structures
+- **Pattern Matching**: naive, KMP, Rabin-Karp algorithms
+- **String Hashing**: rolling hash, collision handling
+- **Applications**: text search, DNA sequence analysis
+
+#### 11. Trie (Prefix Trees)
+- **Skiena Reading**: Chapter 3.7 (String data structures)
+- **Operations**: insert, search, starts_with, delete, prefix enumeration
+- **Space optimization**: compressed tries, suffix trees
+- **Applications**: autocomplete, spell checking, IP routing tables
+
+#### 12. Graphs ⭐
+- **Skiena Reading**: Chapters 5-6 (entire graph section)
+- **CS Primer**: Tree and Graph Traversal module
+- **Representations**:
+  - Adjacency Lists: space-efficient for sparse graphs
+  - Adjacency Matrix: fast edge lookup for dense graphs
+- **Graph Types**: directed, undirected, weighted, DAGs
+- **Basic Operations**: add vertex/edge, neighbors, edge existence
+- **Applications**: social networks, routing, dependency analysis
+
+### 🔬 ALGORITHMS (Skiena-Aligned Implementation Order)
+
+#### Phase 1: Fundamental Algorithms
+
+##### Problem Solving & Analysis
+- **Skiena Reading**: Chapter 1 (Introduction to Algorithm Design), Chapter 2 (Algorithm Analysis)
+- **CS Primer**: Problem Solving module, Asymptotic Analysis module
+- **Polya's Method**: understand the problem, devise a plan, execute, reflect
+- **Big O Analysis**: time/space complexity, best/worst/average case
+- **Practical Problems**: staircase ascent, Roman numerals, number theory
+
+##### Search Algorithms
+- **Skiena Reading**: Chapter 4.9 (Binary Search and Related Algorithms)
+- **CS Primer**: Problem Solving applications
+- **Binary Search**: O(log n) on sorted arrays, variants (first/last occurrence)
+- **Linear Search**: baseline comparison, early termination
+- **Applications**: insertion point finding, range queries, peak finding
+
+##### Sorting Algorithms ⭐
+- **Skiena Reading**: Chapter 4 (Sorting and Searching)
+- **CS Primer**: Divide and Conquer & Sorting module
+- **Elementary Sorts**: selection sort, insertion sort, bubble sort
+- **Efficient Sorts**:
+  - **Merge Sort**: O(n log n), stable, divide-and-conquer, external sorting
+  - **Quick Sort**: O(n log n) average, in-place, pivot strategies, worst-case analysis
+  - **Heap Sort**: O(n log n), in-place, using binary heap implementation
+- **Distribution Sorts**: counting sort, radix sort, bucket sort
+- **Hybrid Approaches**: Timsort (Python's sort), intro sort
+
+##### String Algorithms
+- **Skiena Reading**: Chapter 3.7, Chapter 18 (String Matching)
+- **Naive Pattern Matching**: O(mn) baseline
+- **KMP Algorithm**: O(n+m) with failure function
+- **Rabin-Karp**: rolling hash, O(n) average case
+- **Applications**: text processing, bioinformatics
+
+#### Phase 2: Graph Algorithms ⭐
+
+##### Graph Traversal
+- **Skiena Reading**: Chapter 5.1-5.2 (Flavors of Graphs), Chapter 5.6-5.8 (Traversing a Graph)
+- **CS Primer**: Tree and Graph Traversal module
+- **Breadth-First Search (BFS)**: level-order, shortest paths in unweighted graphs
+- **Depth-First Search (DFS)**: recursive/iterative, connected components
+- **Applications**: maze solving, web crawling, social network analysis
+
+##### Graph Properties
+- **Skiena Reading**: Chapter 5.3-5.5 (Graph Data Structures), Chapter 5.9-5.10
+- **Connected Components**: union-find, component labeling
+- **Bipartite Graphs**: two-coloring via BFS/DFS
+- **Cycle Detection**: back edges in DFS, applications to deadlock detection
+- **Topological Sorting**: DAG ordering, prerequisite scheduling
+
+##### Shortest Path Algorithms
+- **Skiena Reading**: Chapter 6.1-6.3 (Minimum Spanning Trees), Chapter 6.3-6.5 (Shortest Paths)
+- **CS Primer**: Weighted graph searching, A* algorithm
+- **Single-Source**:
+  - **Dijkstra's Algorithm**: non-negative weights, priority queue implementation
+  - **Bellman-Ford**: negative weights, negative cycle detection
+- **All-Pairs**:
+  - **Floyd-Warshall**: dynamic programming approach
+- **Applications**: GPS routing, network protocols, arbitrage detection
+
+##### Minimum Spanning Trees
+- **Skiena Reading**: Chapter 6.1-6.3 (Minimum Spanning Trees)
+- **Kruskal's Algorithm**: edge-based, union-find data structure
+- **Prim's Algorithm**: vertex-based, priority queue
+- **Applications**: network design, clustering, approximation algorithms
+
+#### Phase 3: Advanced Techniques
+
+##### Dynamic Programming ⭐
+- **Skiena Reading**: Chapter 8 (Dynamic Programming)
+- **CS Primer**: Dynamic Programming module
+- **Fundamental Problems**:
+  - Fibonacci sequence (memoization introduction)
+  - House robber problem (CS Primer)
+  - Longest Common Subsequence (2D DP)
+  - Edit Distance (string similarity)
+  - Knapsack Problem (optimization)
+  - Minimal grid path (CS Primer)
+- **Techniques**: memoization, tabulation, space optimization
+- **Applications**: bioinformatics, economics, game theory
+
+##### Backtracking
+- **Skiena Reading**: Chapter 7 (Combinatorial Search and Heuristic Methods)
+- **N-Queens Problem**: constraint satisfaction
+- **Sudoku Solver**: pruning techniques
+- **Graph Coloring**: heuristics and optimizations
+- **Subset Generation**: combinations, permutations
+
+##### Greedy Algorithms
+- **Skiena Reading**: Chapter 9 (Intractable Problems and Approximation Algorithms)
+- **Activity Selection**: interval scheduling
+- **Huffman Coding**: optimal prefix codes
+- **Fractional Knapsack**: vs 0/1 knapsack comparison
+- **Proof Techniques**: exchange argument, staying ahead
+
+#### Phase 4: Computational Geometry & Advanced Topics
+
+##### Basic Computational Geometry
+- **Point-Line Relationships**: orientation testing
+- **Convex Hull**: Graham scan, gift wrapping
+- **Line Intersection**: sweep line algorithms
+- **Applications**: computer graphics, GIS, robotics
+
+##### Advanced Graph Algorithms
+- **Network Flow**: max-flow min-cut theorem, Ford-Fulkerson
+- **Matching**: bipartite matching, stable marriage
+- **Approximation Algorithms**: vertex cover, TSP heuristics
+
+#### Algorithm Analysis Skills (Throughout)
+- **Asymptotic Analysis**: Big O, Θ, Ω notation mastery
+- **Recurrence Relations**: Master theorem, recursion tree method
+- **Amortized Analysis**: aggregate, accounting, potential methods
+- **Probabilistic Analysis**: expected runtime, randomized algorithms
+
+## Learning Principles Applied
+
+### 1. **Implementation First, Theory Second**
+- Code the data structure before diving deep into theory
+- Use failures and bugs as learning opportunities
+- Discover edge cases through testing
+
+### 2. **Performance Verification**
+- Benchmark every implementation
+- Verify Big O complexity empirically
+- Compare theoretical vs practical performance
+- Memory usage analysis
+
+### 3. **Multiple Implementations**
+- Compare different approaches (array vs linked)
+- Explore optimization techniques (dummy nodes, caching)
+- Understand tradeoffs between approaches
+
+### 4. **Socratic Method**
+- Guide discovery through questions
+- Build understanding layer by layer
+- Connect new concepts to previous knowledge
+- Encourage independent problem-solving
+
+### 5. **Real-World Context**
+- When to use each data structure
+- Performance characteristics that matter in practice
+- Memory vs CPU tradeoffs
+- Industry standard implementations
+
+## Assessment & Reflection
+
+### Completed Insights:
+1. **Arrays dominate for simple operations** despite theoretical O(n) operations
+2. **Memory layout matters more than Big O** for small to medium datasets
+3. **Implementation details trump theory** in performance-critical code
+4. **Dummy nodes/sentinels** significantly simplify linked structure code
+5. **Benchmark intuition** can be wrong - always measure
+
+### Skills Developed:
+- Big O analysis (time and space)
+- Performance benchmarking and interpretation
+- Code organization and testing
+- Memory usage analysis
+- Comparative algorithm analysis
+- Implementation pattern recognition
+
+### Next Focus Areas:
+- Two-pointer techniques (queues)
+- Hash table collision strategies
+- Tree balancing concepts
+- Graph representation efficiency
+- Recursive vs iterative algorithm design
+
+## File Organization
+```
+/data_structures/
+├── PLAN.txt (this file)
+├── dynamic_array/
+├── singly_linked_list/
+├── stack/
+├── queue/ (next)
+├── hash_map/
+├── hash_set/
+├── binary_search_tree/
+├── binary_heap/
+├── trie/
+├── graph/
+└── algorithms/
+```
+
+Each directory contains:
+- Implementation file(s)
+- Comprehensive test suite
+- Performance benchmarks
+- Comparison studies (where applicable)
+- Generated performance charts
